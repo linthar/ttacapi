@@ -14,11 +14,12 @@ import org.springframework.stereotype.Component;
 public class AppInitializator {
 
 	@Autowired
-	private InitDatabase aplicationDataInit;
+	private InitDatabase applicationDataInit;
 
 	@PostConstruct
 	public void init() {
-		aplicationDataInit.crearAplicaciones(100);
+		applicationDataInit.crearAplicaciones(100);
+        applicationDataInit.crearCuentas(10);
 	}
 
 }

@@ -21,15 +21,15 @@ public class AplicacionServiceImpl implements AplicacionService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Aplicacion> findAll() {
-		LOGGER.debug("Retrieving the list of all users");
+	public List<Aplicacion> todas() {
+		LOGGER.debug("Retrieving the list of all apps");
 		return aplicacionRepository.findAll();
 	}
 
 	@Override
 	@Transactional(readOnly = true)
 	public List<Aplicacion> buscar(String q) {
-		LOGGER.debug("Buscando por : "+q);
+		LOGGER.debug("Buscando por : " + q);
 		return aplicacionRepository.buscar(q);
 	}
 	
