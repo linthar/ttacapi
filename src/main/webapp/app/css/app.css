@@ -1,0 +1,60 @@
+/* app css stylesheet */
+
+body {
+  background: url('../img/bg.png') repeat scroll 0 0;
+  padding-top: 0;
+}
+
+h1, h2, h3 {
+	font-weight: normal !important;
+}
+
+hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+section {
+	float: left;
+}
+
+input {
+	height: 30px !important;	
+}
+
+label {
+	display: block;
+}
+
+.small-text {
+	font-size: 14px;
+}
+
+#messages {
+    position: fixed;
+    top: 54px;
+	left: 30%;
+}
+.message-initial {
+	display: none;
+}
+
+.profile-image {
+	margin-top: 40px;
+	margin-left: 35px;
+}
+.profile-image img {
+	width: 170px; 
+	border-radius:100px; 
+}
+
+
+.content {
+	padding-top: 30px;
+	background-color: white;
+    box-shadow: 0 1px 5px #777777;
+    width: 90%;
+    margin: auto;
+}
+
+

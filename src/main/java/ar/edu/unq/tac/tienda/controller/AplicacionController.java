@@ -33,4 +33,11 @@ public class AplicacionController extends AbstractRestController {
         LOGGER.debug("Received request to list all users");
         return aplicacionService.buscar(q);
     }
+    
+    
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    public Aplicacion buscar(@PathVariable("id") Long id) {
+        LOGGER.debug("Received request to get Aplicacion for id: "+id);
+        return aplicacionService.findOne(id);
+    }
 }

@@ -10,4 +10,6 @@ public interface AplicacionService {
 
     List<Aplicacion> buscar(String q);
 
+	Aplicacion findOne(Long id);
+
 }

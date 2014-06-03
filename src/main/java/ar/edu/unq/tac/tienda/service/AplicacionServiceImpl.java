@@ -26,6 +26,14 @@ public class AplicacionServiceImpl implements AplicacionService {
 		return aplicacionRepository.findAll();
 	}
 
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Aplicacion findOne(Long id) {
+		LOGGER.debug("Retrieving the App with id: "+id);
+		return aplicacionRepository.findOne(id);
+	}
+	
 	@Override
 	@Transactional(readOnly = true)
 	public List<Aplicacion> buscar(String q) {
