@@ -12,12 +12,12 @@ public class CuentaFactory {
     public static List<Cuenta> getListCuentas(int cantidad) {
         List<Cuenta> list = new ArrayList<Cuenta>(cantidad);
 
-        for (int i = 0; i < cantidad; i++) {
-            List<Aplicacion> apps = AplicacionFactory.getListAplicaciones(5);
+        for (int i = cantidad; i > 0; i--) {
+        	String accountDesc = "Acc_" + i;
 
+        	List<Aplicacion> apps = AplicacionFactory.getListAplicaciones(accountDesc, 5);
             Cuenta cuenta = new Cuenta();
-
-            cuenta.setDescripcion("Acc_" + i);
+			cuenta.setDescripcion(accountDesc);
             cuenta.setInstaladas(apps);
             list.add(cuenta);
         }

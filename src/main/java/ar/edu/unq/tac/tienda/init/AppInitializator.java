@@ -18,8 +18,7 @@ public class AppInitializator {
 
 	@PostConstruct
 	public void init() {
-		applicationDataInit.crearAplicaciones(100);
-        applicationDataInit.crearCuentas(10);
+		applicationDataInit.crearCuentas(10);
 	}
 
 }
