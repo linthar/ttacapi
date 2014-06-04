@@ -34,14 +34,14 @@ public class AplicacionControllerTest {
 
 	@Test
 	public void shouldListAllUsers() throws Exception {
-		when(aplicacionServiceMock.findAll()).thenReturn(
-				AplicacionFactory.getListAplicaciones(10));
+		when(aplicacionServiceMock.todas()).thenReturn(
+				AplicacionFactory.getListAplicaciones("",10));
 
 		Collection<Aplicacion> apps = aplicacionController.findAll();
 		assertNotNull(apps);
 		assertEquals(10, apps.size());
 		// verify user was passed to UserService
-		verify(aplicacionServiceMock, times(1)).findAll();
+		verify(aplicacionServiceMock, times(1)).todas();
 	}
 
 }

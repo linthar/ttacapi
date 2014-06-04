@@ -36,7 +36,7 @@ public class AplicacionServiceImplTest {
 	@Test
 	public void findAll_DatabaseConDatos() throws Exception {
 		stubRepositoryMockFindAll(10);
-		Collection<Aplicacion> list = aplicacionService.findAll();
+		Collection<Aplicacion> list = aplicacionService.todas();
 		assertNotNull(list);
 		assertEquals(10, list.size());
 		verify(aplicacionRepositoryMock, times(1)).findAll();
@@ -44,13 +44,13 @@ public class AplicacionServiceImplTest {
 
 	private void stubRepositoryMockFindAll(int cantidad) {
 		when(aplicacionRepositoryMock.findAll()).thenReturn(
-				AplicacionFactory.getListAplicaciones(cantidad));
+				AplicacionFactory.getListAplicaciones("",cantidad));
 	}
 
 	@Test
 	public void findAll_DatabaseSinDatos() throws Exception {
 		stubRepositoryMockFindAll(0);
-		Collection<Aplicacion> list = aplicacionService.findAll();
+		Collection<Aplicacion> list = aplicacionService.todas();
 		assertNotNull(list);
 		assertTrue(list.isEmpty());
 		verify(aplicacionRepositoryMock, times(1)).findAll();
