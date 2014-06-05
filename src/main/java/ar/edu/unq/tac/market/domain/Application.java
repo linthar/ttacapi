@@ -30,6 +30,10 @@ public class Application {
     // URLs de las imagenes
     private String[] gallery;
 
+    // core apps are provided with the firmware, provide basic services a can't be removed
+    // but could be automatically updated
+    private boolean core;
+
 
     public Long getId() {
         return id;
@@ -101,6 +105,14 @@ public class Application {
 
     public void setGallery(String[] gallery) {
         this.gallery = gallery;
+    }
+
+    public boolean isCore() {
+        return core;
+    }
+
+    public void setCore(boolean core) {
+        this.core = core;
     }
 
     @Override
