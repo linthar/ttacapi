@@ -19,7 +19,11 @@ public class Application {
 
     private Integer ranking;
 
-    private String currentVersion;
+    @OneToOne
+    private Version currentVersion;
+
+    @OneToMany()
+    private Version[] previousVersions;
 
     // URL del archivo a descargar de la App
     private String appUrl;
@@ -75,11 +79,11 @@ public class Application {
         this.ranking = ranking;
     }
 
-    public String getCurrentVersion() {
+    public Version getCurrentVersion() {
         return currentVersion;
     }
 
-    public void setCurrentVersion(String currentVersion) {
+    public void setCurrentVersion(Version currentVersion) {
         this.currentVersion = currentVersion;
     }
 
@@ -113,6 +117,14 @@ public class Application {
 
     public void setCore(boolean core) {
         this.core = core;
+    }
+
+    public Version[] getPreviousVersions() {
+        return previousVersions;
+    }
+
+    public void setPreviousVersions(Version[] previousVersions) {
+        this.previousVersions = previousVersions;
     }
 
     @Override
