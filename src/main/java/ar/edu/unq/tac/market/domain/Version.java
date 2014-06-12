@@ -1,14 +1,16 @@
 package ar.edu.unq.tac.market.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
  * Holds version information for apps
- *
+ * <p/>
  * Created by frepond on 6/7/14.
  */
+@Entity
 public class Version {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

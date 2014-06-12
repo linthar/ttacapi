@@ -2,11 +2,11 @@
 
 /* App Module */
 
-var app = angular.module('tiendaApp', [
+var app = angular.module('marketApp', [
                                              'ngRoute',
-                                             'tiendaControllers',
-                                             'tiendaFilters',
-                                             'tiendaServices'
+                                             'marketControllers',
+                                             'marketFilters',
+                                             'marketServices'
                                            ]);
 
 app.config(['$routeProvider',

@@ -2,7 +2,7 @@
 
  
 /* Filters */
-angular.module('tiendaFilters', []).filter('monthNumber', function() {
+angular.module('marketFilters', []).filter('monthNumber', function() {
 
 	return function(monthNumber) {
 

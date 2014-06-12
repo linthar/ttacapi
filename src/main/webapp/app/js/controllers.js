@@ -2,13 +2,13 @@
 
 /* Controllers */
 
-var tiendaControllers = angular.module('tiendaControllers', []);
+var marketControllers = angular.module('marketControllers', []);
 
 
 /**
  * Message controller
  */
-tiendaControllers.controller('MessageCtrl', ['$scope', '$rootScope','messageService',
+marketControllers.controller('MessageCtrl', ['$scope', '$rootScope','messageService',
 function ($scope, $rootScope, messageService) {
 	
 	$scope.close = function() {
@@ -21,10 +21,10 @@ function ($scope, $rootScope, messageService) {
 /**
  * List controller
  */
-tiendaControllers.controller('ListCrtl', ['$scope', '$http',
+marketControllers.controller('ListCrtl', ['$scope', '$http',
 function ($scope, $http) {
 
-	$http.get('/aplicacion/all/').success(function(data) {
+	$http.get('/application/all/').success(function(data) {
 	      $scope.apps = data;
 	});
  }]);
@@ -34,11 +34,11 @@ function ($scope, $http) {
 /**
  * View controller
  */
-tiendaControllers.controller('ViewCrtl', ['$scope', '$routeParams', '$http', '$location', 'messageService',
+marketControllers.controller('ViewCrtl', ['$scope', '$routeParams', '$http', '$location', 'messageService',
 
 function ($scope, $routeParams, $http, $location, messageService) {
 
-	  $http.get('/aplicacion/get/'+ $routeParams.appid).
+	  $http.get('/application/get/'+ $routeParams.appid).
 	  	success(function(data) {
 	  		$scope.app = data;
 	  	}).

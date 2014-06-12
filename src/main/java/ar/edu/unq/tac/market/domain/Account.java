@@ -28,7 +28,6 @@ public class Account {
         this.description = description;
     }
 
-
     public List<Application> getInstalled() {
         return installed;
     }

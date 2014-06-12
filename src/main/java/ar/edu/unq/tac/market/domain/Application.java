@@ -1,6 +1,7 @@
 package ar.edu.unq.tac.market.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -22,8 +23,8 @@ public class Application {
     @OneToOne
     private Version currentVersion;
 
-    @OneToMany()
-    private Version[] previousVersions;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Version> previousVersions;
 
     // URL del archivo a descargar de la App
     private String appUrl;
@@ -119,11 +120,11 @@ public class Application {
         this.core = core;
     }
 
-    public Version[] getPreviousVersions() {
+    public List<Version> getPreviousVersions() {
         return previousVersions;
     }
 
-    public void setPreviousVersions(Version[] previousVersions) {
+    public void setPreviousVersions(List<Version> previousVersions) {
         this.previousVersions = previousVersions;
     }
 

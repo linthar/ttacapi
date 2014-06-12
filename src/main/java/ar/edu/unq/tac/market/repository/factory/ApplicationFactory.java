@@ -19,7 +19,7 @@ public class ApplicationFactory {
             Application app = new Application();
             app.setName(namePrefix + " - App " + i);
             app.setDescription("App description " + i);
-            app.setCurrentVersion(String.valueOf(i));
+            //  app.setCurrentVersion("");
             app.setCategory(Category.FREE_TIME);
             app.setRanking(random.nextInt(6));
             list.add(app);

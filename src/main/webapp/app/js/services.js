@@ -2,7 +2,7 @@
 
 /* Services */
  
-angular.module('tiendaServices', ['ngResource']).
+angular.module('marketServices', ['ngResource']).
 	factory('app', function($resource, $routeParams){
         return $resource('/aplicacion/get/'+ $routeParams.appid, {}, {
     		query: {method:'GET', params:{appid: $routeParams.appid}, isArray:false}
