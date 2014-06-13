@@ -1,0 +1,17 @@
+{
+    "name": "Tienda TAC",
+    "description": "Tienda de Aplicaciones TAC",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "icons": {
+        "16": "television-08-icon-16.png",
+        "128": "television-08-icon-128.png"
+    },
+    "permissions": ["storage", "webview"],
+    "optional_permissions": [ "http://localhost:*/*", "https://localhost:*/*"]
+}
