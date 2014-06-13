@@ -24,7 +24,7 @@ function ($scope, $rootScope, messageService) {
 marketControllers.controller('ListCrtl', ['$scope', '$http',
 function ($scope, $http) {
 
-	$http.get('/application/all/').success(function(data) {
+	$http.get('http://localhost:8080/application/all/').success(function(data) {
 	      $scope.apps = data;
 	});
  }]);
@@ -38,7 +38,7 @@ marketControllers.controller('ViewCrtl', ['$scope', '$routeParams', '$http', '$l
 
 function ($scope, $routeParams, $http, $location, messageService) {
 
-	  $http.get('/application/get/'+ $routeParams.appid).
+	  $http.get('http://localhost:8080/application/get/'+ $routeParams.appid).
 	  	success(function(data) {
 	  		$scope.app = data;
 	  	}).

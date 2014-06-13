@@ -3,11 +3,16 @@
 /* App Module */
 
 var app = angular.module('marketApp', [
-                                             'ngRoute',
-                                             'marketControllers',
-                                             'marketFilters',
-                                             'marketServices'
-                                           ]);
+                            'ngRoute',
+                            'marketControllers',
+                            'marketFilters',
+                            'marketServices']).config( [
+                                '$compileProvider',
+                                function( $compileProvider ) {
+                                    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
+                                    $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|file|chrome-extension):|data:image/);
+                                }
+                            ]);
 
 app.config(['$routeProvider',
   function($routeProvider) {
