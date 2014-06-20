@@ -3,6 +3,7 @@ package ar.edu.unq.tac.market.service;
 import ar.edu.unq.tac.market.domain.Application;
 import ar.edu.unq.tac.market.repository.ApplicationRepository;
 import ar.edu.unq.tac.market.repository.factory.ApplicationFactory;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class ApplicationServiceImplTest {
 
-    @Mock
+	@Mock
     private ApplicationRepository applicationRepositoryMock;
 
     private ApplicationService applicationService;
@@ -30,24 +31,26 @@ public class ApplicationServiceImplTest {
 
     @Test
     public void findAll_DatabaseConDatos() throws Exception {
-        stubRepositoryMockFindAll(10);
+    	int expected = ApplicationFactory.amount();
+        stubRepositoryMockFindAll(9);
         Collection<Application> list = applicationService.all();
         assertNotNull(list);
-        assertEquals(10, list.size());
+        assertEquals(expected, list.size());
         verify(applicationRepositoryMock, times(1)).findAll();
     }
 
     private void stubRepositoryMockFindAll(int cantidad) {
         when(applicationRepositoryMock.findAll()).thenReturn(
-                ApplicationFactory.getApplicationList("", cantidad));
+                ApplicationFactory.getApplicationList());
     }
 
     @Test
     public void findAll_DatabaseSinDatos() throws Exception {
+    	int expected = ApplicationFactory.amount();
         stubRepositoryMockFindAll(0);
         Collection<Application> list = applicationService.all();
         assertNotNull(list);
-        assertTrue(list.isEmpty());
+        assertEquals(expected, list.size());
         verify(applicationRepositoryMock, times(1)).findAll();
     }
 
