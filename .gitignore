@@ -1,4 +1,5 @@
 target/
+.metadata/
 .project
 .classpath
 .settings
@@ -8,3 +9,4 @@ pom.xml.next
 release.properties
 .idea
 *.iml
+*~
