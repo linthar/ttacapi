@@ -4,7 +4,7 @@ import ar.edu.unq.tac.market.domain.Account;
 
 import java.util.List;
 
-public interface AccountService {
+public interface AccountService extends ResourceService<Account>{
 
     List<Account> all();
 

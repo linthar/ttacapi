@@ -4,7 +4,7 @@ import ar.edu.unq.tac.market.domain.Application;
 
 import java.util.List;
 
-public interface ApplicationService {
+public interface ApplicationService extends ResourceService<Application> {
 
     List<Application> all();
 
